@@ -170,7 +170,7 @@ sp_lbl.place(y=560,x=0)
 
 
 speed = Entry(root,bg='white',width=4)
-speed.place(y=562,x=310)
+speed.place(y=562,x=313)
 speed.insert(0,'5')
 
 
