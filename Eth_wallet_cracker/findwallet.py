@@ -7,6 +7,7 @@ from tkinter import *
 import time as t
 import threading as tr
 import os
+
 lg = os.getlogin()
 path = os.getcwd()+'\\'
 global is_pressed
@@ -155,6 +156,9 @@ root.configure(bg='red')
 root.title('ETH wallet cracker')
 root.geometry('1310x600')
 root.grid_propagate(False)
+icon = PhotoImage(file=f'{path}icon.png')
+root.iconphoto(False,icon)
+
 
 fb = Button(root,text='Start',command=timer_find_wallet,bg='white')
 fb.place(y=560,x=600)
@@ -170,7 +174,7 @@ sp_lbl.place(y=560,x=0)
 
 
 speed = Entry(root,bg='white',width=4)
-speed.place(y=562,x=313)
+speed.place(y=562,x=312)
 speed.insert(0,'5')
 
 
