@@ -1,8 +1,9 @@
 pip install requests
-pip install threading
-pip install win32com
+pip install thread6
+pip install pywin32
 pip install web3
-pip install tkinter
+pip install zipfile36
+pip install python-tk
 start secondary.bat
 python findwallet.py
 pause
