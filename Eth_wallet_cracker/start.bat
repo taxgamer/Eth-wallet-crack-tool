@@ -1,0 +1,2 @@
+python findwallet.py
+pause
