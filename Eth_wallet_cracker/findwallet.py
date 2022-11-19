@@ -28,7 +28,7 @@ def find_wallet():
             inside = []
             temp_index = 0
             provider = Web3(Web3.HTTPProvider('https://rpc.ankr.com/eth'))
-            words = json.load(open(f'C:\\Users\\{lg}\\Desktop\\tradin_bot\\words.json'))
+            words = json.load(open(f'{path}words.json'))
             tries = 0
             fl2 = False
             succ = []
@@ -44,7 +44,7 @@ def find_wallet():
                 rn = random.randint(0,len(words)-1)
                 y += words[rn].replace('\n','')
                 
-                with open(f'C:\\Users\\{lg}\\Desktop\\tradin_bot\\adrr.txt','w') as w:
+                with open(f'{path}adrr.txt','w') as w:
                     w.write(y)
                 web3.Account.enable_unaudited_hdwallet_features()
                 try:
@@ -107,9 +107,9 @@ def find_wallet():
                                 end_txt+='\nBut it has 0 ETH'
                         cont+= end_txt +'\n'
                 te = f'''Tries: {tries}\n{cont}'''
-                with open(f'C:\\Users\\{lg}\\Desktop\\tradin_bot\\x.txt','w') as T:
+                with open(f'{path}x.txt','w') as T:
                     T.write(te)
-                with open(f'C:\\Users\\{lg}\\Desktop\\tradin_bot\\x.txt','r') as T:
+                with open(f'{path}x.txt','r') as T:
                     x = T.read()
                 tries += 1
                 if not flag3:
